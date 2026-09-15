@@ -1,0 +1,155 @@
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(2, 11, 24, 0.5);
+  border: 1px solid rgba(8, 120, 255, 0.2);
+  backdrop-filter: blur(16px);
+  padding: 0.25rem 0.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.navItem {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  transition: color 0.2s ease;
+  color: #EAF2FF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.navItem:hover {
+  color: #0878FF;
+}
+
+.navItem.active {
+  color: #0878FF;
+}
+
+.navItemText {
+  display: none;
+}
+
+.navItemIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .navItemText {
+    display: inline;
+  }
+  .navItemIcon {
+    display: none;
+  }
+}
+
+.activeBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background-color: rgba(8, 120, 255, 0.1);
+  border-radius: 9999px;
+  z-index: -10;
+}
+
+.activeTopBar {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 0.25rem;
+  background-color: #0878FF;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.glow1 {
+  position: absolute;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: rgba(8, 120, 255, 0.3);
+  border-radius: 9999px;
+  filter: blur(12px);
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
+.glow2 {
+  position: absolute;
+  width: 2rem;
+  height: 1.5rem;
+  background-color: rgba(8, 120, 255, 0.3);
+  border-radius: 9999px;
+  filter: blur(12px);
+  top: -0.25rem;
+}
+
+.glow3 {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(8, 120, 255, 0.3);
+  border-radius: 9999px;
+  filter: blur(4px);
+  top: 0;
+  left: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .navContainer {
+    flex-direction: column;
+    width: 100%;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .navItem {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    justify-content: flex-start;
+    color: #cbd5e1;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .navItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .navItemText {
+    display: inline;
+  }
+
+  .navItemIcon {
+    display: inline-flex;
+    margin-right: 1rem;
+    color: inherit;
+  }
+
+  .activeBg {
+    background-color: rgba(8, 120, 255, 0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(8, 120, 255, 0.3);
+  }
+
+  .activeTopBar, .glow1, .glow2, .glow3 {
+    display: none;
+  }
+}

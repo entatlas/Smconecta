@@ -1,0 +1,60 @@
+openapi: 3.0.3
+info:
+  title: Conecta SM API Central
+  description: API Central para integrações, aplicativo móvel e serviços externos do Conecta SM.
+  version: "1.0.0"
+servers:
+  - url: /api/v1
+    description: V1
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
+paths:
+  /health:
+    get:
+      summary: Health check
+      security: []
+      responses:
+        "200":
+          description: OK
+  /candidates/me:
+    get:
+      summary: Retorna perfil do candidato autenticado
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Unauthorized
+    patch:
+      summary: Atualiza perfil do candidato autenticado
+      responses:
+        "200":
+          description: OK
+  /jobs:
+    get:
+      summary: Lista vagas
+      security: []
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+        - in: query
+          name: limit
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+  /professional-areas:
+    get:
+      summary: Lista áreas profissionais ativas
+      security: []
+      responses:
+        "200":
+          description: OK
