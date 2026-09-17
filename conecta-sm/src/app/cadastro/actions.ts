@@ -57,7 +57,7 @@ export async function sendWelcomeEmail(email: string, nome: string, tipo: string
           <p>Estamos muito felizes em tê-lo conosco! A partir de agora, você pode publicar vagas e encontrar os melhores talentos da nossa comunidade.</p>
           <br/>
           <p>Acesse seu painel agora mesmo para completar o perfil da sua empresa e começar.</p>
-          <a href="https://smsolutions-three.vercel.app/login" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Acessar Dashboard</a>
+          <a href="https://www.smconexao.com.br/login" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Acessar Dashboard</a>
           <br/><br/>
           <p>Um abraço,<br/><strong>Equipe SM Solutions</strong></p>
         </div>
@@ -69,7 +69,7 @@ export async function sendWelcomeEmail(email: string, nome: string, tipo: string
           <p>É ótimo ter você aqui. Nossa plataforma foi feita para conectar grandes talentos como você às melhores oportunidades do mercado.</p>
           <br/>
           <p>O seu próximo passo é acessar a plataforma, completar o seu currículo e explorar as vagas disponíveis.</p>
-          <a href="https://smsolutions-three.vercel.app/login" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Acessar Plataforma</a>
+          <a href="https://www.smconexao.com.br/login" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Acessar Plataforma</a>
           <br/><br/>
           <p>Um abraço,<br/><strong>Equipe SM Solutions</strong></p>
         </div>

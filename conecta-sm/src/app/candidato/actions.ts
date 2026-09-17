@@ -404,7 +404,7 @@ export async function applyToJob(jobId: string) {
                 <p>O candidato <strong>${fullCandidate.profile.nome}</strong> acaba de se candidatar para a sua vaga de <strong>${job.title}</strong>.</p>
                 <p>Acesse o painel do Conecta SM para analisar o currículo completo.</p>
                 <br/>
-                <a href="https://smsolutions-three.vercel.app/empresa/candidaturas" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Ver Candidaturas</a>
+                <a href="https://www.smconexao.com.br/empresa/candidaturas" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Ver Candidaturas</a>
               </div>
             `
           })
@@ -429,7 +429,7 @@ export async function applyToJob(jobId: string) {
                 <p>Seu currículo foi enviado com sucesso para a vaga de <strong>${job.title}</strong> na empresa <strong>${job.company.tradeName}</strong>.</p>
                 <p>Cruze os dedos! Você pode acompanhar o status do processo diretamente no seu painel.</p>
                 <br/>
-                <a href="https://smsolutions-three.vercel.app/candidato/candidaturas" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Acompanhar Status</a>
+                <a href="https://www.smconexao.com.br/candidato/candidaturas" style="background-color: #0070f3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Acompanhar Status</a>
               </div>
             `
           })
