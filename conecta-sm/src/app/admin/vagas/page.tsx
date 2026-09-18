@@ -20,9 +20,11 @@ export default async function VagasPage() {
         </div>
         
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button variant="default" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-            <Plus size={16} /> Nova Vaga
-          </Button>
+          <Link href="/admin/vagas/nova">
+            <Button variant="default" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <Plus size={16} /> Nova Vaga
+            </Button>
+          </Link>
         </div>
       </div>
 

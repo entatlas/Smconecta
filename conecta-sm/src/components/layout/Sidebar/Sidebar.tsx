@@ -27,6 +27,7 @@ import {
   Moon,
   X,
   Menu,
+  Globe,
   Mail,
   MessageCircle,
 } from 'lucide-react';
@@ -213,6 +214,28 @@ export const Sidebar = () => {
         {/* User Footer */}
         <div className={styles.footer}>
           <div ref={userMenuRef}>
+            {userMenuOpen && (
+              <div className={styles.userDropdown}>
+                <button className={styles.dropdownItem}>
+                  <User size={14} /> Minha Conta
+                </button>
+                <Link href="/admin/configuracoes" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
+                  <Settings size={14} /> Configurações
+                </Link>
+                <Link href="/" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
+                  <Globe size={14} /> Ir para o site
+                </Link>
+
+                <div className={styles.dropdownDivider} />
+                <button
+                  className={`${styles.dropdownItem} ${styles.dropdownItemDanger}`}
+                  onClick={handleLogout}
+                >
+                  <LogOut size={14} /> Sair da conta
+                </button>
+              </div>
+            )}
+            
             <button
               className={styles.userCard}
               onClick={() => setUserMenuOpen(v => !v)}
@@ -230,30 +253,6 @@ export const Sidebar = () => {
                 className={`${styles.userChevron} ${userMenuOpen ? styles.userChevronOpen : ''}`}
               />
             </button>
-
-            {userMenuOpen && (
-              <div className={styles.userDropdown}>
-                <button className={styles.dropdownItem}>
-                  <User size={14} /> Minha Conta
-                </button>
-                <Link href="/admin/configuracoes" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
-                  <Settings size={14} /> Configurações
-                </Link>
-                <button className={styles.dropdownItem} onClick={toggleTheme}>
-                  {theme === 'light'
-                    ? <><Moon size={14} /> Modo Escuro</>
-                    : <><Sun size={14} /> Modo Claro</>
-                  }
-                </button>
-                <div className={styles.dropdownDivider} />
-                <button
-                  className={`${styles.dropdownItem} ${styles.dropdownItemDanger}`}
-                  onClick={handleLogout}
-                >
-                  <LogOut size={14} /> Sair da conta
-                </button>
-              </div>
-            )}
           </div>
         </div>
 

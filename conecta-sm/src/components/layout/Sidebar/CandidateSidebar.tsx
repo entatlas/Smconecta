@@ -18,6 +18,9 @@ import {
   LogOut,
   ChevronDown,
   Crown,
+  Moon,
+  Globe,
+  X,
   MessageCircle
 } from 'lucide-react';
 import styles from './Sidebar.module.css';
@@ -167,6 +170,25 @@ export const CandidateSidebar = () => {
         {/* User Footer Dropdown (Mesmo visual do admin) */}
         <div className={styles.footer}>
           <div ref={userMenuRef}>
+            {userMenuOpen && (
+              <div className={styles.userDropdown}>
+                <Link href="/candidato/perfil" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }} onClick={() => setSidebarOpen(false)}>
+                  <User size={14} /> Minha Conta
+                </Link>
+                <Link href="/candidato/configuracoes" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }} onClick={() => setSidebarOpen(false)}>
+                  <Settings size={14} /> Configurações
+                </Link>
+                <Link href="/" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }} onClick={() => setSidebarOpen(false)}>
+                  <Globe size={14} /> Ir para o site
+                </Link>
+                
+                <div className={styles.dropdownDivider} />
+                
+                <button className={`${styles.dropdownItem} ${styles.dropdownItemDanger}`} onClick={handleLogout}>
+                  <LogOut size={14} /> Sair da conta
+                </button>
+              </div>
+            )}
             <button
               className={styles.userCard}
               onClick={() => setUserMenuOpen(v => !v)}
@@ -184,23 +206,6 @@ export const CandidateSidebar = () => {
                 className={`${styles.userChevron} ${userMenuOpen ? styles.userChevronOpen : ''}`}
               />
             </button>
-
-            {userMenuOpen && (
-              <div className={styles.userDropdown}>
-                <Link href="/candidato/perfil" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }} onClick={() => setSidebarOpen(false)}>
-                  <User size={14} /> Minha Conta
-                </Link>
-                <Link href="/candidato/configuracoes" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }} onClick={() => setSidebarOpen(false)}>
-                  <Settings size={14} /> Configurações
-                </Link>
-                
-                <div className={styles.dropdownDivider} />
-                
-                <button className={`${styles.dropdownItem} ${styles.dropdownItemDanger}`} onClick={handleLogout}>
-                  <LogOut size={14} /> Sair da conta
-                </button>
-              </div>
-            )}
           </div>
         </div>
       </aside>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/utils/supabase/client';
-import { Menu, X, LayoutDashboard, Users, Briefcase, Calendar, Building2, Settings, Bell, LogOut, CreditCard, ChevronDown, User, Sun, Moon, LifeBuoy } from 'lucide-react';
+import { Menu, X, LayoutDashboard, Users, Briefcase, Calendar, Building2, Settings, Bell, LogOut, CreditCard, ChevronDown, User, Sun, Moon, Globe, LifeBuoy } from 'lucide-react';
 import styles from './Sidebar.module.css';
 import { useTranslation } from '@/contexts/I18nContext';
 import { useTheme } from '../../providers/ThemeProvider';
@@ -153,6 +153,24 @@ export const CompanySidebar = () => {
 
       <div className={styles.footer}>
         <div ref={userMenuRef}>
+          {userMenuOpen && (
+            <div className={styles.userDropdown}>
+              <Link href="/empresa/perfil" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
+                <User size={14} /> Minha Conta
+              </Link>
+              <Link href="/empresa/configuracoes" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
+                <Settings size={14} /> Configurações
+              </Link>
+              <Link href="/" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
+                <Globe size={14} /> Ir para o site
+              </Link>
+
+              <div className={styles.dropdownDivider} />
+              <button className={styles.dropdownItem} onClick={handleLogout} style={{ color: 'var(--color-danger)' }}>
+                <LogOut size={14} /> {t('sidebar.logout')}
+              </button>
+            </div>
+          )}
           <button
             className={styles.userCard}
             onClick={() => setUserMenuOpen(v => !v)}
@@ -170,27 +188,6 @@ export const CompanySidebar = () => {
               className={`${styles.userChevron} ${userMenuOpen ? styles.userChevronOpen : ''}`}
             />
           </button>
-
-          {userMenuOpen && (
-            <div className={styles.userDropdown}>
-              <Link href="/empresa/perfil" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
-                <User size={14} /> Minha Conta
-              </Link>
-              <Link href="/empresa/configuracoes" prefetch={false} className={styles.dropdownItem} style={{ textDecoration: 'none' }}>
-                <Settings size={14} /> Configurações
-              </Link>
-              <button className={styles.dropdownItem} onClick={toggleTheme}>
-                {theme === 'light'
-                  ? <><Moon size={14} /> Modo Escuro</>
-                  : <><Sun size={14} /> Modo Claro</>
-                }
-              </button>
-              <div className={styles.dropdownDivider} />
-              <button className={styles.dropdownItem} onClick={handleLogout} style={{ color: 'var(--color-danger)' }}>
-                <LogOut size={14} /> {t('sidebar.logout')}
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </aside>
