@@ -26,17 +26,16 @@ export default function LoginPage() {
     setSuccess('');
     setLoading(true);
 
-    // Verifica se o e-mail existe antes de tentar o login no Supabase
-    const emailExists = await checkEmailExists(email);
-    if (!emailExists) {
-      setError('E-mail não cadastrado.');
-      setLoading(false);
-      return;
-    }
-
-    const supabase = createClient();
-
     try {
+      // Verifica se o e-mail existe antes de tentar o login no Supabase
+      const emailExists = await checkEmailExists(email);
+      if (!emailExists) {
+        setError('E-mail não cadastrado.');
+        setLoading(false);
+        return;
+      }
+
+      const supabase = createClient();
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -54,7 +53,8 @@ export default function LoginPage() {
       router.refresh();
       
     } catch (err) {
-      setError('Ocorreu um erro ao tentar entrar.');
+      console.error(err);
+      setError('Ocorreu um erro ao tentar entrar. Verifique sua conexão.');
       setLoading(false);
     }
   };

@@ -20,9 +20,11 @@ export default async function EmpresasPage() {
         </div>
         
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button variant="default" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-            <Plus size={16} /> Cadastrar Empresa
-          </Button>
+          <Link href="/admin/empresas/nova" style={{ textDecoration: 'none' }}>
+            <Button variant="default" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <Plus size={16} /> Cadastrar Empresa
+            </Button>
+          </Link>
         </div>
       </div>
 

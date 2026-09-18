@@ -58,7 +58,7 @@ export function NovaVagaForm({ companies }: { companies: Company[] }) {
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         
         {/* Row 1 */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <label style={{ color: '#8B9BB4', fontSize: '0.875rem' }}>Título da Vaga *</label>
             <input required name="title" placeholder="Ex: Desenvolvedor Front-end" style={{ padding: '12px', borderRadius: '8px', background: '#0A1B35', border: '1px solid #11284A', color: '#fff' }} />
@@ -75,7 +75,7 @@ export function NovaVagaForm({ companies }: { companies: Company[] }) {
         </div>
 
         {/* Row 2 */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <label style={{ color: '#8B9BB4', fontSize: '0.875rem' }}>Área de Atuação *</label>
             <input required name="area" placeholder="Ex: Tecnologia" style={{ padding: '12px', borderRadius: '8px', background: '#0A1B35', border: '1px solid #11284A', color: '#fff' }} />
@@ -102,7 +102,7 @@ export function NovaVagaForm({ companies }: { companies: Company[] }) {
         </div>
 
         {/* Row 3 */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <label style={{ color: '#8B9BB4', fontSize: '0.875rem' }}>Horário / Jornada (opcional)</label>
             <input name="schedule" placeholder="Ex: Seg a Sex, 09h às 18h" style={{ padding: '12px', borderRadius: '8px', background: '#0A1B35', border: '1px solid #11284A', color: '#fff' }} />
@@ -114,7 +114,7 @@ export function NovaVagaForm({ companies }: { companies: Company[] }) {
         </div>
 
         {/* Row 4 */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <label style={{ color: '#8B9BB4', fontSize: '0.875rem' }}>Estado (UF)</label>
             <input name="state" placeholder="Ex: SP" style={{ padding: '12px', borderRadius: '8px', background: '#0A1B35', border: '1px solid #11284A', color: '#fff' }} />
@@ -126,7 +126,7 @@ export function NovaVagaForm({ companies }: { companies: Company[] }) {
         </div>
 
         {/* Row 5 */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <label style={{ color: '#8B9BB4', fontSize: '0.875rem' }}>Salário Mínimo (R$)</label>
             <input type="number" step="0.01" name="salaryMin" placeholder="Ex: 3000.00" style={{ padding: '12px', borderRadius: '8px', background: '#0A1B35', border: '1px solid #11284A', color: '#fff' }} />

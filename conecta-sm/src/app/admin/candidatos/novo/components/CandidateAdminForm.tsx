@@ -113,7 +113,7 @@ export function CandidateAdminForm() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: '#8B9BB4' }}>Nome Completo *</label>
             <Input required value={nome} onChange={e => setNome(e.target.value)} placeholder="João Silva" />
@@ -199,7 +199,7 @@ export function CandidateAdminForm() {
           <div key={idx} style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', position: 'relative' }}>
             {idx > 0 && <button type="button" onClick={() => setEducation(education.filter((_, i) => i !== idx))} style={{ position: 'absolute', top: '16px', right: '16px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}><Trash2 size={16} /></button>}
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', paddingRight: idx > 0 ? '32px' : '0' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ paddingRight: idx > 0 ? '32px' : '0' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: '#8B9BB4' }}>Instituição</label>
                 <Input value={item.institution} onChange={e => { const newArr = [...education]; newArr[idx].institution = e.target.value; setEducation(newArr); }} placeholder="USP" />
@@ -253,7 +253,7 @@ export function CandidateAdminForm() {
           <div key={idx} style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', position: 'relative' }}>
             {idx > 0 && <button type="button" onClick={() => setExperiences(experiences.filter((_, i) => i !== idx))} style={{ position: 'absolute', top: '16px', right: '16px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}><Trash2 size={16} /></button>}
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', paddingRight: idx > 0 ? '32px' : '0' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ paddingRight: idx > 0 ? '32px' : '0' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: '#8B9BB4' }}>Empresa</label>
                 <Input value={item.company} onChange={e => { const newArr = [...experiences]; newArr[idx].company = e.target.value; setExperiences(newArr); }} placeholder="Tech Corp" />
@@ -300,7 +300,7 @@ export function CandidateAdminForm() {
         {courses.map((item, idx) => (
           <div key={idx} style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', position: 'relative' }}>
             {idx > 0 && <button type="button" onClick={() => setCourses(courses.filter((_, i) => i !== idx))} style={{ position: 'absolute', top: '16px', right: '16px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}><Trash2 size={16} /></button>}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', paddingRight: idx > 0 ? '32px' : '0' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ paddingRight: idx > 0 ? '32px' : '0' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: '#8B9BB4' }}>Nome do Curso</label>
                 <Input value={item.name} onChange={e => { const newArr = [...courses]; newArr[idx].name = e.target.value; setCourses(newArr); }} placeholder="Lógica de Programação" />
@@ -334,7 +334,7 @@ export function CandidateAdminForm() {
         {languages.map((item, idx) => (
           <div key={idx} style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', position: 'relative' }}>
             {idx > 0 && <button type="button" onClick={() => setLanguages(languages.filter((_, i) => i !== idx))} style={{ position: 'absolute', top: '16px', right: '16px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}><Trash2 size={16} /></button>}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', paddingRight: idx > 0 ? '32px' : '0' }}>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4" style={{ paddingRight: idx > 0 ? '32px' : '0' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: '#8B9BB4' }}>Idioma</label>
                 <Input value={item.language} onChange={e => { const newArr = [...languages]; newArr[idx].language = e.target.value; setLanguages(newArr); }} placeholder="Inglês" />
@@ -392,7 +392,7 @@ export function CandidateAdminForm() {
         {skills.map((item, idx) => (
           <div key={idx} style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', marginBottom: '16px', position: 'relative' }}>
             {idx > 0 && <button type="button" onClick={() => setSkills(skills.filter((_, i) => i !== idx))} style={{ position: 'absolute', top: '16px', right: '16px', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}><Trash2 size={16} /></button>}
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '16px', paddingRight: idx > 0 ? '32px' : '0' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ paddingRight: idx > 0 ? '32px' : '0' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: '#8B9BB4' }}>Habilidade</label>
                 <Input value={item.name} onChange={e => { const newArr = [...skills]; newArr[idx].name = e.target.value; setSkills(newArr); }} placeholder="React.js, Gestão de Projetos, etc..." />
